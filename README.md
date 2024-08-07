@@ -13,10 +13,6 @@ The Simple PHP Blog Script is a lightweight blogging platform built using PHP. I
 -  **SEO Optimized**
 -  **No Database Required**
 
-## Important Note
-
-This script is designed to work with Apache servers. It may not function correctly with other web servers like Nginx without additional configuration.
-
 ## Libraries Used
 
 -  **jQuery**: For dynamic content handling and interactions.
@@ -71,6 +67,26 @@ This script is designed to work with Apache servers. It may not function correct
 5. **Access your blog**
 
    Open your browser and navigate to the URL where you uploaded the script to start using your blog.
+
+## Important Note
+
+This script is designed to work with Apache servers. It may not function correctly with other web servers like Nginx without additional configuration.
+
+## Screenshots
+
+### Web Version
+
+<img src="screenshots/desktop-1.png" alt="Web Screenshot 1" width="600">
+<img src="screenshots/desktop-2.png" alt="Web Screenshot 2" width="600">
+<img src="screenshots/desktop-3.png" alt="Web Screenshot 3" width="600">
+
+### Mobile Version
+
+### Mobile Version
+
+<img src="screenshots/mobile-1.png" alt="Mobile Screenshot 1" width="300">
+<img src="screenshots/mobile-2.png" alt="Mobile Screenshot 2" width="300">
+<img src="screenshots/mobile-3.png" alt="Mobile Screenshot 3" width="300">
 
 ## Contributing
 
