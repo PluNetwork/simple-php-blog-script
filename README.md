@@ -82,8 +82,6 @@ This script is designed to work with Apache servers. It may not function correct
 
 ### Mobile Version
 
-### Mobile Version
-
 <img src="screenshots/mobile-1.png" alt="Mobile Screenshot 1" width="300">
 
 ## Contributing
