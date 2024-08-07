@@ -1,0 +1,39 @@
+RewriteEngine On
+
+# Blog-specific rules
+RewriteRule ^blog/$ blog.php [L,QSA]
+
+# Blog: Handle page, search, category and tag parameters
+RewriteRule ^blog/page/([0-9]+)/?$ blog.php?page=$1 [L,QSA]
+RewriteRule ^blog/search/([^/]+)/?$ blog.php?search=$1 [B,L,QSA]
+RewriteRule ^blog/tag/([^/]+)/?$ blog.php?tag=$1 [L,QSA,NE]
+RewriteRule ^blog/category/([^/]+)/?$ blog.php?category=$1 [L,QSA,NE,B]
+
+RewriteRule ^blog/page/([0-9]+)/search/([^/]+)/?$ blog.php?page=$1&search=$2 [B,L,QSA]
+RewriteRule ^blog/page/([0-9]+)/tag/([^/]+)/?$ blog.php?page=$1&tag=$2 [L,QSA]
+RewriteRule ^blog/page/([0-9]+)/category/([^/]+)/?$ blog.php?page=$1&category=$2 [L,QSA]
+
+RewriteRule ^blog/search/([^/]+)/tag/([^/]+)/?$ blog.php?search=$1&tag=$2 [B,L,QSA]
+RewriteRule ^blog/page/([0-9]+)/search/([^/]+)/tag/([^/]+)/?$ blog.php?page=$1&search=$2&tag=$3 [B,L,QSA]
+
+# Blog: Rewrite blog post URLs
+RewriteRule ^blog/post/([^/]+)/?$ post.php?slug=$1 [L,QSA,B]
+
+# Allow access to HTML files in posts directory through post.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^posts/(.+)\.html$ post.php?slug=$1 [L,QSA]
+
+# Main site: Serve .php files for extensionless URLs
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [L]
+
+# Prevent direct access to .php files (except specified ones)
+<FilesMatch "\.php$">
+    RewriteCond %{REQUEST_URI} !^/index\.php$
+    RewriteCond %{REQUEST_URI} !^/blog\.php$
+    RewriteCond %{REQUEST_URI} !^/post\.php$
+    RewriteCond %{REQUEST_URI} !^/includes/blogRequests\.php$
+    RewriteRule ^(.*)$ / [F,L]
+</FilesMatch>
