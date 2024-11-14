@@ -28,7 +28,7 @@ The Simple PHP Blog Script is a lightweight blogging platform built using PHP. I
 1. **Clone or download the repository:**
 
    ```bash
-   git clone https://github.com/Turbo0x03/simple-php-blog-script.git
+   git clone https://github.com/PluNetwork/simple-php-blog-script.git
    ```
 
 2. **Upload the script to your server or local environment.**
